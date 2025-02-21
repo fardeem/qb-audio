@@ -1,6 +1,8 @@
 import WaveSurfer from "@wavesurfer/react";
 import { useState } from "react";
 import { LoadingButton } from "./LoadingButton";
+import { useAtom } from "jotai";
+import { splitAyahsAtom } from "../stores/audioCache";
 
 interface EditAyahModalProps {
   isOpen: boolean;
@@ -18,12 +20,17 @@ export function EditAyahModal({
   ayah,
   onSplit,
 }: EditAyahModalProps) {
+  const [, setSplitAyahs] = useAtom(splitAyahsAtom);
   const [currentTime, setCurrentTime] = useState<number | null>(null);
   const [duration, setDuration] = useState<number | null>(null);
 
   const handleSplit = async () => {
     if (currentTime !== null) {
       await onSplit(currentTime * 1000);
+      setSplitAyahs((prev) => ({
+        ...prev,
+        [ayah.id]: (prev[ayah.id] || 0) + 1,
+      }));
       onClose();
     }
   };

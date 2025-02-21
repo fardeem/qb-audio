@@ -88,5 +88,41 @@
     "forced_approved": true,
     "matches": false,
     "english_transcription": " Be he a vile djinn or men."
+  },
+  "113_05": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and from the evil of envier when gripped by envy."
+  },
+  "113_04": {
+    "wer": 0.23076923076923078,
+    "forced_approved": true,
+    "matches": false,
+    "english_transcription": " and from the evil of wicked souls who blow spittle mist on sorcerous nuts."
+  },
+  "113_03": {
+    "wer": 0.08333333333333333,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " and from the evil of outward blackest night when it fills everything."
+  },
+  "113_02": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " from the evil of all he has created."
+  },
+  "113_01": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " In the name of Allah, most merciful and compassionate, say I take refuge in the Lord of Daybreak."
+  },
+  "113": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " 113 Daybreak"
   }
 }

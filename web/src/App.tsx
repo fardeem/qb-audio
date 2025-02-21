@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { EditAyahModal } from "./components/EditAyahModal";
 import { LoadingButton } from "./components/LoadingButton";
+import { useAtomValue } from "jotai";
+import { splitAyahsAtom } from "./stores/audioCache";
 
 const API_BASE_URL = "http://localhost:8000";
 
@@ -56,10 +58,16 @@ interface AudioPlayerProps {
 }
 
 function AudioPlayer({ src, title }: AudioPlayerProps) {
+  const splitAyahs = useAtomValue(splitAyahsAtom);
+
+  // Extract the ayah ID from the src URL
+  const ayahId = src.split("/").pop()?.split(".")[0];
+  const version = ayahId ? splitAyahs[ayahId] || 0 : 0;
+
   return (
     <audio
       controls
-      src={`${src}#t=${Date.now()}`}
+      src={`${src}?v=${version}`}
       title={title}
       className="w-[300px] px-1"
     >
@@ -68,16 +76,37 @@ function AudioPlayer({ src, title }: AudioPlayerProps) {
   );
 }
 
+function getSurahStatus(
+  ayahs: Ayah[],
+  surahNumber: number
+): "all" | "some" | "none" | "unprocessed" {
+  const surahAyahs = ayahs.filter(
+    (ayah) => getSurahNumber(ayah.id) === surahNumber
+  );
+
+  if (surahAyahs.length === 0) return "none";
+
+  const processedAyahs = surahAyahs.filter((ayah) => ayah.matches !== null);
+  if (processedAyahs.length === 0) return "unprocessed";
+
+  const matchingAyahs = processedAyahs.filter((ayah) => ayah.matches === true);
+
+  if (matchingAyahs.length === processedAyahs.length) return "all";
+  return "some";
+}
+
 interface SurahSelectorProps {
   surahNumbers: number[];
   selectedSurah: number;
   onChange: (surah: number) => void;
+  ayahs: Ayah[];
 }
 
 function SurahSelector({
   surahNumbers,
   selectedSurah,
   onChange,
+  ayahs,
 }: SurahSelectorProps) {
   return (
     <div className="mb-6 flex items-center gap-2">
@@ -90,11 +119,17 @@ function SurahSelector({
         onChange={(e) => onChange(parseInt(e.target.value))}
         className="rounded-md border border-gray-300 px-3 py-1.5 shadow-sm focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
       >
-        {surahNumbers.map((number) => (
-          <option key={number} value={number}>
-            Surah {number}
-          </option>
-        ))}
+        {surahNumbers.map((number) => {
+          const status = getSurahStatus(ayahs, number);
+          const statusIcon =
+            status === "all" ? "✅" : status === "some" ? "❌" : "";
+
+          return (
+            <option key={number} value={number}>
+              Surah {number} {statusIcon}
+            </option>
+          );
+        })}
       </select>
     </div>
   );
@@ -345,6 +380,7 @@ export default function App() {
         surahNumbers={surahNumbers}
         selectedSurah={selectedSurah}
         onChange={setSelectedSurah}
+        ayahs={ayahs}
       />
       <AyahTable ayahs={filteredAyahs} onRefresh={refetch} />
     </div>
