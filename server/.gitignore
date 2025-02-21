@@ -10,3 +10,5 @@ wheels/
 .venv
 
 static/combined/*
+static/arabic/*
+static/english/*

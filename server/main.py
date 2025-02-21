@@ -1,7 +1,14 @@
 from typing import Union
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
+from pydub import AudioSegment, silence
+import whisper
+from langdetect import detect
+import re
+import os
+from pathlib import Path
+from src import audio_processor
 
 app = FastAPI()
 
@@ -15,7 +22,6 @@ app.add_middleware(
 )
 
 import json
-from pathlib import Path
 from pydantic import BaseModel
 from typing import Dict, Optional
 
@@ -67,12 +73,154 @@ class ItemStore:
 # Initialize the store
 item_store = ItemStore()
 
+# Initialize Whisper model globally
+model = whisper.load_model("large-v3-turbo")
 
+def preprocess_text(text):
+    text = text.lower()
+    text = re.sub(r'[^\w\s]', '', text)
+    text = ' '.join(text.split())
+    return text
 
+def get_arabic_end_time(audio_path):
+    result = model.transcribe(
+        audio_path,
+        language="ar",
+        task="transcribe",
+        fp16=False,
+        initial_prompt="Contains arabic followed by english translation. For example: أن ناس The people"
+    )
+    
+    arabic_segments = []
+    for seg in result["segments"]:
+        try:
+            if detect(seg["text"].strip()) == 'ar':
+                arabic_segments.append(seg)
+        except:
+            continue
+    
+    return arabic_segments[-1]["end"] if arabic_segments else 5.0
+
+def split_audio(audio_path, output_dir_arabic, output_dir_english):
+    """Generic function to split an audio file into Arabic and English parts"""
+    # Get target split time from Whisper
+    target_split_time = get_arabic_end_time(audio_path)
+    
+    # Load the audio
+    audio = AudioSegment.from_file(audio_path)
+    filename = Path(audio_path).stem
+    
+    # Detect silences
+    silence_threshold = -50
+    min_silence_len = 50
+    silences = silence.detect_silence(
+        audio,
+        min_silence_len=min_silence_len,
+        silence_thresh=silence_threshold
+    )
+
+    # Find best split point
+    target_ms = target_split_time * 1000
+    best_gap_start = None
+    smallest_time_diff = float('inf')
+
+    for start_ms, end_ms in silences:
+        time_diff = abs(start_ms - target_ms)
+        if time_diff < smallest_time_diff:
+            smallest_time_diff = time_diff
+            best_gap_start = start_ms + (end_ms - start_ms) * (5/6)
+
+    if best_gap_start is None:
+        raise ValueError("No suitable split point found")
+
+    # Split and save
+    first_part = audio[:best_gap_start]
+    second_part = audio[best_gap_start:]
+    
+    arabic_path = output_dir_arabic / f"{filename}.wav"
+    english_path = output_dir_english / f"{filename}.wav"
+    
+    first_part.export(str(arabic_path), format="wav")
+    second_part.export(str(english_path), format="wav")
+    
+    # Transcribe English part
+    result = model.transcribe(
+        str(english_path),
+        language="en",
+        fp16=False
+    )
+    
+    return {
+        "english_transcription": result["text"],
+        "split_time": best_gap_start / 1000  # Convert to seconds
+    }
+
+@app.post("/split/{item_id}")
+def split_item(item_id: str):
+    """Split a specific audio file by ID"""
+    # Construct paths
+    combined_path = Path("static/combined")
+    arabic_path = Path("static/arabic")
+    english_path = Path("static/english")
+    
+    # Ensure output directories exist
+    arabic_path.mkdir(parents=True, exist_ok=True)
+    english_path.mkdir(parents=True, exist_ok=True)
+    
+    # Find the audio file
+    audio_file = None
+    for root, _, files in os.walk(combined_path):
+        for file in files:
+            if file.startswith(item_id) and file.endswith('.wav'):
+                audio_file = Path(root) / file
+                break
+    
+    if not audio_file:
+        raise HTTPException(status_code=404, detail="Audio file not found")
+    
+    try:
+        # Get subfolder from audio path
+        subfolder = audio_file.parent.name
+        output_dir_arabic = arabic_path / subfolder
+        output_dir_english = english_path / subfolder
+        
+        # Create subfolder directories
+        output_dir_arabic.mkdir(parents=True, exist_ok=True)
+        output_dir_english.mkdir(parents=True, exist_ok=True)
+        
+        # Split the audio
+        result = audio_processor.split_audio(str(audio_file), output_dir_arabic, output_dir_english)
+        
+        # Update item store with all results
+        stored_item = item_store.get(item_id)
+        if stored_item:
+            stored_item.english_transcription = result["english_transcription"]
+            stored_item.wer = result["wer"]
+            stored_item.matches = result["matches"]
+            item_store.set(item_id, stored_item)
+        else:
+            new_item = Item(
+                wer=result["wer"],
+                forced_approved=False,
+                matches=result["matches"],
+                english_transcription=result["english_transcription"]
+            )
+            item_store.set(item_id, new_item)
+        
+        return {
+            "status": "success",
+            "split_time": result["split_time"],
+            "english_transcription": result["english_transcription"],
+            "wer": result["wer"],
+            "matches": result["matches"],
+            "source_translation": result["source_translation"]
+        }
+        
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 # Mount the static directory
 app.mount("/static", StaticFiles(directory="static"), name="static")
-
 
 @app.get("/")
 def read_root():
@@ -80,9 +228,6 @@ def read_root():
 
 @app.get("/ayahs")
 def list_items():
-    import os
-    from pathlib import Path
-
     # Get all files in combined directory
     combined_path = Path("static/combined")
     results = []
@@ -102,15 +247,18 @@ def list_items():
                     # Get stored item data
                     stored_item = item_store.get(item_id)
                     
+                    # Get source translation
+                    source_translation = audio_processor.get_source_translation(item_id)
+                    
                     # Construct full URLs with server address
                     result = {
                         "id": item_id,
                         "combined_url": f"http://localhost:8000/static/{rel_path}",
                         "arabic_url": f"http://localhost:8000/static/{os.path.relpath(arabic_path, 'static')}" if arabic_path.exists() else None,
                         "english_url": f"http://localhost:8000/static/{os.path.relpath(english_path, 'static')}" if english_path.exists() else None,
-                        "source_translation": None,  # To be implemented later
+                        "source_translation": source_translation,
                         "english_transcription": stored_item.english_transcription if stored_item else None,
-                        "matches": stored_item.matches if stored_item else None,
+                        "matches": (stored_item.matches or stored_item.wer < 0.15 or stored_item.forced_approved) if stored_item else None,
                         "wer": stored_item.wer if stored_item else None,
                         "forced_approved": stored_item.forced_approved if stored_item else None
                     }
@@ -118,3 +266,24 @@ def list_items():
                     results.append(result)
     
     return results
+
+@app.post("/approve/{item_id}")
+def force_approve(item_id: str):
+    # Get stored item data
+    stored_item = item_store.get(item_id)
+    
+    if not stored_item:
+        # Create new item if it doesn't exist
+        stored_item = Item(
+            wer=0.0,  # Default values
+            forced_approved=True,
+            matches=False,
+            english_transcription=""
+        )
+        item_store.set(item_id, stored_item)  # Use set() instead of dict assignment
+    else:
+        # Update existing item
+        stored_item.forced_approved = True
+        item_store.set(item_id, stored_item)
+    
+    return {"status": "success"}

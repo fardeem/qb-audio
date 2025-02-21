@@ -1,0 +1,92 @@
+{
+  "01_01": {
+    "wer": 0.1111111111111111,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " The name of Allah, most merciful and compassionate."
+  },
+  "01_07": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " the way of those you have divinely blessed, who have not then incurred wrath, or utterly lost the way."
+  },
+  "01": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " 1. Opening"
+  },
+  "01_06": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Guide us the straight way."
+  },
+  "01_03": {
+    "wer": 0.25,
+    "forced_approved": true,
+    "matches": false,
+    "english_transcription": " was merciful and compassionate."
+  },
+  "01_05": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " You alone we humbly adore, and in you alone we seek help."
+  },
+  "01_04": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Master of the Day of Reckoning."
+  },
+  "01_02": {
+    "wer": 0.1,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " while praise is Allah's Lord of all worlds of beings."
+  },
+  "114": {
+    "wer": 1.0,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "114_01": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " In the name of Allah, most merciful and compassionate, say I take refuge in the Lord of men."
+  },
+  "114_02": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " the King of Men."
+  },
+  "114_03": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " the God of men."
+  },
+  "114_04": {
+    "wer": 0.125,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " from the evil of the cunning insinuator of ill thoughts, who ever draws back from being guessed."
+  },
+  "114_05": {
+    "wer": 0.6666666666666666,
+    "forced_approved": true,
+    "matches": false,
+    "english_transcription": " who sews and sews ill thoughts in the breast of men."
+  },
+  "114_06": {
+    "wer": 0.2857142857142857,
+    "forced_approved": true,
+    "matches": false,
+    "english_transcription": " Be he a vile djinn or men."
+  }
+}
