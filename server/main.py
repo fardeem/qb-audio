@@ -1,5 +1,5 @@
 from typing import Union
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, BackgroundTasks
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from pydub import AudioSegment, silence
@@ -9,6 +9,7 @@ import re
 import os
 from pathlib import Path
 from src import audio_processor
+import asyncio
 
 app = FastAPI()
 
@@ -24,6 +25,14 @@ app.add_middleware(
 import json
 from pydantic import BaseModel
 from typing import Dict, Optional
+
+# import SSE event helpers
+from src.events import router as events_router, send_event
+
+# Create a semaphore that limits concurrency
+split_semaphore = asyncio.Semaphore(2)  # e.g. allow up to 2
+
+app.include_router(events_router)
 
 class Item(BaseModel):
     wer: float
@@ -156,68 +165,92 @@ def split_audio(audio_path, output_dir_arabic, output_dir_english):
     }
 
 @app.post("/split/{item_id}")
-def split_item(item_id: str):
-    """Split a specific audio file by ID"""
-    # Construct paths
-    combined_path = Path("static/combined")
-    arabic_path = Path("static/arabic")
-    english_path = Path("static/english")
-    
-    # Ensure output directories exist
-    arabic_path.mkdir(parents=True, exist_ok=True)
-    english_path.mkdir(parents=True, exist_ok=True)
-    
-    # Find the audio file
-    audio_file = None
-    for root, _, files in os.walk(combined_path):
-        for file in files:
-            if file.startswith(item_id) and file.endswith('.wav'):
-                audio_file = Path(root) / file
-                break
-    
-    if not audio_file:
-        raise HTTPException(status_code=404, detail="Audio file not found")
-    
-    try:
-        # Get subfolder from audio path
-        subfolder = audio_file.parent.name
-        output_dir_arabic = arabic_path / subfolder
-        output_dir_english = english_path / subfolder
+async def split_item(item_id: str, background_tasks: BackgroundTasks):
+    """
+    Schedules a background job to split a specific audio file.
+    """
+    background_tasks.add_task(_process_split_item, item_id)
+    return {"status": "scheduled"}
+
+async def _process_split_item(item_id: str):
+    """
+    The actual splitting logic, wrapped in concurrency control and SSE push on completion.
+    """
+    async with split_semaphore:
+        try:
+            # Construct paths
+            combined_path = Path("static/combined")
+            arabic_path = Path("static/arabic")
+            english_path = Path("static/english")
+            
+            print(f"Processing item_id: {item_id}")
+            print(f"Looking in: {combined_path}")
+            
+            # Find the audio file
+            audio_file = None
+            for root, _, files in os.walk(combined_path):
+                for file in files:
+                    base_name = os.path.splitext(file)[0]
+                    if base_name == item_id and file.endswith('.wav'):
+                        audio_file = Path(root) / file
+                        print(f"Found matching file: {audio_file}")
+                        break
+            
+            if not audio_file:
+                print(f"No matching file found for {item_id}")
+                await send_event("split_failed", {
+                    "item_id": item_id,
+                    "error": "Audio file not found"
+                })
+                return
+
+            print(f"Processing file: {audio_file}")
+            # Get subfolder from audio path
+            subfolder = audio_file.parent.name
+            output_dir_arabic = arabic_path / subfolder
+            output_dir_english = english_path / subfolder
+            
+            print(f"Output directories:")
+            print(f"  Arabic: {output_dir_arabic}")
+            print(f"  English: {output_dir_english}")
+
+            # Create subfolder directories
+            output_dir_arabic.mkdir(parents=True, exist_ok=True)
+            output_dir_english.mkdir(parents=True, exist_ok=True)
+
+            # Perform the split, get the result
+            print(f"Calling audio_processor.split_audio with:")
+            print(f"  input: {str(audio_file)}")
+            print(f"  arabic_out: {output_dir_arabic}")
+            print(f"  english_out: {output_dir_english}")
+            result = audio_processor.split_audio(str(audio_file), output_dir_arabic, output_dir_english)
+
+            # Update or create item in item_store
+            stored_item = item_store.get(item_id)
+            if stored_item:
+                stored_item.english_transcription = result["english_transcription"]
+                stored_item.wer = result["wer"]
+                stored_item.matches = result["matches"]
+                item_store.set(item_id, stored_item)
+            else:
+                new_item = Item(
+                    wer=result["wer"],
+                    forced_approved=False,
+                    matches=result["matches"],
+                    english_transcription=result["english_transcription"]
+                )
+                item_store.set(item_id, new_item)
+                
+        except Exception as e:
+            # If splitting fails, you can also send an event for failure
+            await send_event("split_failed", {
+                "item_id": item_id,
+                "error": str(e)
+            })
+            return
         
-        # Create subfolder directories
-        output_dir_arabic.mkdir(parents=True, exist_ok=True)
-        output_dir_english.mkdir(parents=True, exist_ok=True)
-        
-        # Split the audio
-        result = audio_processor.split_audio(str(audio_file), output_dir_arabic, output_dir_english)
-        
-        # Update item store with all results
-        stored_item = item_store.get(item_id)
-        if stored_item:
-            stored_item.english_transcription = result["english_transcription"]
-            stored_item.wer = result["wer"]
-            stored_item.matches = result["matches"]
-            item_store.set(item_id, stored_item)
-        else:
-            new_item = Item(
-                wer=result["wer"],
-                forced_approved=False,
-                matches=result["matches"],
-                english_transcription=result["english_transcription"]
-            )
-            item_store.set(item_id, new_item)
-        
-        return {
-            "status": "success",
-            "split_time": result["split_time"],
-            "english_transcription": result["english_transcription"],
-            "wer": result["wer"],
-            "matches": result["matches"],
-            "source_translation": result["source_translation"]
-        }
-        
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        # Once the job completes successfully, send an SSE event
+        await send_event("split_finished", {"item_id": item_id})
 
 # Mount the static directory
 app.mount("/static", StaticFiles(directory="static"), name="static")
@@ -307,7 +340,9 @@ def split_item_custom(item_id: str, request: CustomSplitRequest):
     audio_file = None
     for root, _, files in os.walk(combined_path):
         for file in files:
-            if file.startswith(item_id) and file.endswith('.wav'):
+            # Match exact ID before the extension
+            base_name = os.path.splitext(file)[0]
+            if base_name == item_id and file.endswith('.wav'):
                 audio_file = Path(root) / file
                 break
 

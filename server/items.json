@@ -124,5 +124,179 @@
     "forced_approved": false,
     "matches": true,
     "english_transcription": " 113 Daybreak"
+  },
+  "112": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and no one even compares with him."
+  },
+  "109_04": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " nor ever shall I be a worshipper of what you have worshipped."
+  },
+  "109_03": {
+    "wer": 0.1,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " nor ever shall you be worshipers of what I worship."
+  },
+  "109_02": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Never shall I worship what you worship."
+  },
+  "109_01": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " In the name of Allah most merciful and compassionate, say, O utter unbelievers,"
+  },
+  "109_06": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Your religion is but yours, and mine is but mine."
+  },
+  "109_05": {
+    "wer": 0.1,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " nor ever shall you be worshipers of what I worship."
+  },
+  "109": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " 109 unbelievers."
+  },
+  "97": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " 97. Destiny."
+  },
+  "97_01": {
+    "wer": 0.05,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " In the name of Allah, most merciful and compassionate, verily we commence sending it down on the night of destiny."
+  },
+  "97_05": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Absolute peace and safety it is to the rise of the dawn."
+  },
+  "97_02": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and what may teach you what is the night of destiny."
+  },
+  "97_03": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " The night of destiny is better than a thousand months."
+  },
+  "97_04": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Therein the angels and the supreme angelic spirit of life-giving revelation descend in throng after throng by leave of their Lord to set every matter that shall happen that year."
+  },
+  "99": {
+    "wer": 0.3333333333333333,
+    "forced_approved": true,
+    "matches": false,
+    "english_transcription": " 99, the earthquake."
+  },
+  "99_01": {
+    "wer": 0.17391304347826086,
+    "forced_approved": true,
+    "matches": false,
+    "english_transcription": " in the name of a law most merciful and compassionate when the whole earth is set a quake as balefully as it may be shaken"
+  },
+  "99_02": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and the earth casts up its mighty burdens."
+  },
+  "99_03": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and man says, whatever can be the matter with it."
+  },
+  "99_04": {
+    "wer": 0.125,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " On that day shall I recount its news."
+  },
+  "99_06": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " That day shall mankind return, apart, alone, unfriended, to be shown their works."
+  },
+  "99_05": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " that your Lord has given it cue to."
+  },
+  "99_08": {
+    "wer": 0.13333333333333333,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " and whoever works the way to a speck of dust of evil shall see it."
+  },
+  "99_07": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " So whoever works the weight of a speck of dust, of good, shall see it."
+  },
+  "105": {
+    "wer": 0.5714285714285714,
+    "forced_approved": true,
+    "matches": false,
+    "english_transcription": " 105, The War Elephant"
+  },
+  "105_01": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " In the name of Allah, most merciful and compassionate, have you not seen how your Lord did with those of the mighty war elephant?"
+  },
+  "105_02": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Did he not send their guile completely astray?"
+  },
+  "105_03": {
+    "wer": 0.18181818181818182,
+    "forced_approved": true,
+    "matches": false,
+    "english_transcription": " and loose against them flock after flock of unheard of eerie birds."
+  },
+  "105_04": {
+    "wer": 0.4,
+    "forced_approved": true,
+    "matches": false,
+    "english_transcription": " raining down on them hails of fatally piercing stones of fired clay."
+  },
+  "105_05": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " So he made them like stubble grazed clean away."
   }
 }

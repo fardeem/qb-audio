@@ -39,7 +39,7 @@ function useAyahs() {
     } finally {
       setIsLoading(false);
     }
-  }, []);
+  }, [ayahs.length]);
 
   React.useEffect(() => {
     fetchAyahs();
@@ -122,7 +122,7 @@ function SurahSelector({
         {surahNumbers.map((number) => {
           const status = getSurahStatus(ayahs, number);
           const statusIcon =
-            status === "all" ? "✅" : status === "some" ? "❌" : "";
+            status === "all" ? "✅" : status === "some" ? "⚠️" : "";
 
           return (
             <option key={number} value={number}>
@@ -276,14 +276,16 @@ function AyahTable({ ayahs, onRefresh }: AyahTableProps) {
                       </LoadingButton>
                     )}
 
-                    <LoadingButton
-                      onClick={async () => {
-                        await splitAyah(ayah.id);
-                      }}
-                      className="rounded bg-green-500 px-2 py-1 text-white text-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
-                    >
-                      Auto-Split
-                    </LoadingButton>
+                    {ayah.matches === null && (
+                      <LoadingButton
+                        onClick={async () => {
+                          await splitAyah(ayah.id);
+                        }}
+                        className="rounded bg-green-500 px-2 py-1 text-white text-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                      >
+                        Auto-Split
+                      </LoadingButton>
+                    )}
 
                     {ayah.matches !== null && !ayah.matches && (
                       <LoadingButton
@@ -341,6 +343,29 @@ export default function App() {
       setSelectedSurah(surahNumbers[0]);
     }
   }, [surahNumbers, selectedSurah]);
+
+  useEffect(() => {
+    // Connect to SSE endpoint
+    const es = new EventSource(`${API_BASE_URL}/events`);
+
+    es.onmessage = (e) => {
+      try {
+        const msg = JSON.parse(e.data);
+        if (msg.type === "split_finished") {
+          // If a split finishes, refetch data
+          refetch();
+        } else if (msg.type === "split_failed") {
+          alert(`Split failed for ${msg.data.item_id}: ${msg.data.error}`);
+        }
+      } catch (err) {
+        console.error("SSE parse error:", err);
+      }
+    };
+
+    return () => {
+      es.close();
+    };
+  }, [refetch]);
 
   // Don't render until we have a selected surah
   if (selectedSurah === null) {
