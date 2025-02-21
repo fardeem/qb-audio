@@ -48,10 +48,10 @@
     "english_transcription": " while praise is Allah's Lord of all worlds of beings."
   },
   "114": {
-    "wer": 1.0,
+    "wer": 0.0,
     "forced_approved": false,
-    "matches": false,
-    "english_transcription": " Thank you."
+    "matches": true,
+    "english_transcription": " 114 Men"
   },
   "114_01": {
     "wer": 0.0,

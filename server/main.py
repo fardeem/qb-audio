@@ -229,6 +229,7 @@ def read_root():
 @app.get("/ayahs")
 def list_items():
     # Get all files in combined directory
+    print("Listing items")
     combined_path = Path("static/combined")
     results = []
     
@@ -287,3 +288,76 @@ def force_approve(item_id: str):
         item_store.set(item_id, stored_item)
     
     return {"status": "success"}
+
+class CustomSplitRequest(BaseModel):
+    split_time_ms: float
+
+@app.post("/split_custom/{item_id}")
+def split_item_custom(item_id: str, request: CustomSplitRequest):
+    """Split a specific audio file at the given millisecond timestamp."""
+    combined_path = Path("static/combined")
+    arabic_path = Path("static/arabic")
+    english_path = Path("static/english")
+
+    # Ensure output directories exist
+    arabic_path.mkdir(parents=True, exist_ok=True)
+    english_path.mkdir(parents=True, exist_ok=True)
+
+    # Find the audio file
+    audio_file = None
+    for root, _, files in os.walk(combined_path):
+        for file in files:
+            if file.startswith(item_id) and file.endswith('.wav'):
+                audio_file = Path(root) / file
+                break
+
+    print(f"Audio file: {audio_file}")
+
+    if not audio_file:
+        raise HTTPException(status_code=404, detail="Audio file not found")
+
+    print(f"Audio file exists: {audio_file.exists()}")
+
+    try:
+        # Split using custom timestamp
+        subfolder = audio_file.parent.name
+        output_dir_arabic = arabic_path / subfolder
+        output_dir_english = english_path / subfolder
+        output_dir_arabic.mkdir(parents=True, exist_ok=True)
+        output_dir_english.mkdir(parents=True, exist_ok=True)
+        
+        result = audio_processor.split_audio_custom(
+            str(audio_file), 
+            output_dir_arabic, 
+            output_dir_english, 
+            request.split_time_ms
+        )
+        
+        # Update or insert into item store
+        stored_item = item_store.get(item_id)
+        if stored_item:
+            stored_item.english_transcription = result["english_transcription"]
+            stored_item.wer = result["wer"]
+            stored_item.matches = result["matches"]
+            item_store.set(item_id, stored_item)
+        else:
+            new_item = Item(
+                wer=result["wer"],
+                forced_approved=False,
+                matches=result["matches"],
+                english_transcription=result["english_transcription"]
+            )
+            item_store.set(item_id, new_item)
+        
+        return {
+            "status": "success",
+            "split_time": result["split_time"],
+            "english_transcription": result["english_transcription"],
+            "wer": result["wer"],
+            "matches": result["matches"],
+            "source_translation": result["source_translation"]
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+

@@ -148,4 +148,50 @@ def split_audio(audio_path, output_dir_arabic, output_dir_english):
         "wer": wer,
         "matches": matches,
         "source_translation": source_translation
+    }
+
+def split_audio_custom(audio_path, output_dir_arabic, output_dir_english, custom_split_time_ms):
+    """
+    Split an audio file into two parts at the given millisecond timestamp.
+    Then transcribe the English part, compute WER, compare with source translation, etc.
+    """
+    print(f"Splitting audio at {custom_split_time_ms}ms")
+    audio = AudioSegment.from_file(audio_path)
+    filename = Path(audio_path).stem
+
+    # Get source translation
+    source_translation = get_source_translation(filename)
+    if source_translation is None:
+        raise ValueError(f"Could not find source translation for {filename}")
+
+    # Split at custom_split_time_ms
+    first_part = audio[:custom_split_time_ms]
+    second_part = audio[custom_split_time_ms:]
+
+    # Export resulting files
+    arabic_path = output_dir_arabic / f"{filename}.wav"
+    english_path = output_dir_english / f"{filename}.wav"
+    first_part.export(str(arabic_path), format="wav")
+    second_part.export(str(english_path), format="wav")
+
+    # Transcribe English part
+    result = model.transcribe(
+        str(english_path),
+        language="en",
+        fp16=False
+    )
+    english_text = result["text"]
+
+    # Calculate WER and check if translations match
+    clean_reference = preprocess_text(source_translation)
+    clean_hypothesis = preprocess_text(english_text)
+    wer = jiwer.wer(clean_reference, clean_hypothesis)
+    matches = matches_translation(english_text, source_translation)
+
+    return {
+        "english_transcription": english_text,
+        "split_time": custom_split_time_ms / 1000.0,  # Convert to seconds
+        "wer": wer,
+        "matches": matches,
+        "source_translation": source_translation
     } 
