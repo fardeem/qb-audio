@@ -352,5 +352,125 @@
     "forced_approved": false,
     "matches": true,
     "english_transcription": " 98. The Living Clear Proof."
+  },
+  "87_09": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " So remind should reminding the least avail."
+  },
+  "87_08": {
+    "wer": 0.15384615384615385,
+    "forced_approved": true,
+    "matches": false,
+    "english_transcription": " and we shall ever believe you under the divine way of greatest ease."
+  },
+  "87_03": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and who has disposed all in exacting proportion, then guided to its due end."
+  },
+  "87_18": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Verily this is in the primal pages of Scripture."
+  },
+  "87_02": {
+    "wer": 0.125,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " who has created and brought to fullest perfection."
+  },
+  "87_19": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " The Pages of Abraham and Moses"
+  },
+  "87_16": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Rather, you invariably all prefer the pathetic life of this world."
+  },
+  "87_17": {
+    "wer": 0.1,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " for the final abode is far better and more lasting."
+  },
+  "87_15": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and remembers to his deepest heart the name of his Lord, so performs the prayer."
+  },
+  "87_01": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " In the name of Allah, most merciful and compassionate, glorify in utter greatness the name of your Lord, most high."
+  },
+  "87_05": {
+    "wer": 0.1,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " then reduced it to a blackened rack of withered bits."
+  },
+  "87_11": {
+    "wer": 0.25,
+    "forced_approved": true,
+    "matches": false,
+    "english_transcription": " and utterly shunned the wretchedest of all."
+  },
+  "87_12": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " who shall roast in the supreme fire of hell."
+  },
+  "87_10": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " He shall unfailingly remember who feels dread and awe."
+  },
+  "87_06": {
+    "wer": 0.2,
+    "forced_approved": true,
+    "matches": false,
+    "english_transcription": " We shall be sight unto you so you will not forget."
+  },
+  "87_04": {
+    "wer": 0.42857142857142855,
+    "forced_approved": true,
+    "matches": false,
+    "english_transcription": " and it was brought forth a verdant pasturage."
+  },
+  "87_13": {
+    "wer": 0.2,
+    "forced_approved": true,
+    "matches": false,
+    "english_transcription": " and yet dire, and no matter how long after, never die in it, nor yet live."
+  },
+  "87_07": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Save what Allah will, verily he knows alike the open and yet unspoken."
+  },
+  "87": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " 87 the most high."
+  },
+  "87_14": {
+    "wer": 0.2,
+    "forced_approved": true,
+    "matches": false,
+    "english_transcription": " He has truly succeeded forever, who strives to reach full purity and faith indeed."
   }
 }
