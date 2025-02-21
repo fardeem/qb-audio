@@ -109,7 +109,7 @@ function SurahSelector({
   ayahs,
 }: SurahSelectorProps) {
   return (
-    <div className="mb-6 flex items-center gap-2">
+    <div className="flex items-center gap-2">
       <label htmlFor="surah-select" className="font-medium text-gray-700">
         Select Surah:
       </label>
@@ -138,9 +138,14 @@ function SurahSelector({
 interface AyahTableProps {
   ayahs: Ayah[];
   onRefresh: () => Promise<void>;
+  isBulkProcessing?: boolean;
 }
 
-function AyahTable({ ayahs, onRefresh }: AyahTableProps) {
+function AyahTable({
+  ayahs,
+  onRefresh,
+  isBulkProcessing = false,
+}: AyahTableProps) {
   const [editingAyah, setEditingAyah] = React.useState<Ayah | null>(null);
 
   const splitAyah = async (id: string) => {
@@ -281,6 +286,8 @@ function AyahTable({ ayahs, onRefresh }: AyahTableProps) {
                         onClick={async () => {
                           await splitAyah(ayah.id);
                         }}
+                        disabled={isBulkProcessing}
+                        isLoading={isBulkProcessing}
                         className="rounded bg-green-500 px-2 py-1 text-white text-sm hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
                       >
                         Auto-Split
@@ -332,13 +339,14 @@ function parseAyahId(ayahId: string): { surah: number; ayah: number } {
 export default function App() {
   const { ayahs, isLoading, error, refetch } = useAyahs();
   const [selectedSurah, setSelectedSurah] = React.useState<number | null>(null);
+  const [isBulkProcessing, setIsBulkProcessing] = React.useState(false);
 
   const surahNumbers = Array.from(
     new Set(ayahs.map((ayah) => getSurahNumber(ayah.id)))
   ).sort((a, b) => a - b);
 
   // Set initial surah if not set
-  useEffect(() => {
+  React.useEffect(() => {
     if (surahNumbers.length > 0 && selectedSurah === null) {
       setSelectedSurah(surahNumbers[0]);
     }
@@ -399,15 +407,62 @@ export default function App() {
       return idA.ayah - idB.ayah;
     });
 
+  async function handleBulkProcessSurah() {
+    if (!selectedSurah) return;
+    setIsBulkProcessing(true);
+    try {
+      // Find all unmatched ayahs in the selected surah
+      const unmatchedAyahs = ayahs
+        .filter((a) => getSurahNumber(a.id) === selectedSurah)
+        .filter((a) => a.matches === null);
+
+      // Process them in chunks of 10
+      for (let i = 0; i < unmatchedAyahs.length; i += 10) {
+        const chunk = unmatchedAyahs.slice(i, i + 10);
+        await Promise.all(
+          chunk.map((ayah) =>
+            fetch(`${API_BASE_URL}/split/${ayah.id}`, {
+              method: "POST",
+            })
+          )
+        );
+        // After completing each chunk, refetch
+        await refetch();
+      }
+    } catch (error) {
+      console.error("Bulk processing error:", error);
+    } finally {
+      setIsBulkProcessing(false);
+    }
+  }
+
   return (
-    <div className=" mx-auto px-4 py-8">
-      <SurahSelector
-        surahNumbers={surahNumbers}
-        selectedSurah={selectedSurah}
-        onChange={setSelectedSurah}
-        ayahs={ayahs}
+    <div className="mx-auto px-4 py-8 ">
+      <div className="flex items-center gap-4 mb-10">
+        <SurahSelector
+          surahNumbers={surahNumbers}
+          selectedSurah={selectedSurah}
+          onChange={setSelectedSurah}
+          ayahs={ayahs}
+        />
+
+        <div className="">
+          <LoadingButton
+            onClick={handleBulkProcessSurah}
+            disabled={isBulkProcessing}
+            isLoading={isBulkProcessing}
+            className="rounded bg-purple-500 px-4 py-2 text-white hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
+          >
+            Process Surah (in batches of 10)
+          </LoadingButton>
+        </div>
+      </div>
+
+      <AyahTable
+        ayahs={filteredAyahs}
+        onRefresh={refetch}
+        isBulkProcessing={isBulkProcessing}
       />
-      <AyahTable ayahs={filteredAyahs} onRefresh={refetch} />
     </div>
   );
 }

@@ -298,5 +298,59 @@
     "forced_approved": false,
     "matches": true,
     "english_transcription": " So he made them like stubble grazed clean away."
+  },
+  "98_01": {
+    "wer": 0.10256410256410256,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " In the name of a law most merciful and compassionate, those who disbelieve the people of the book and the idolaters would never have been loosed from the bonds of unbelief until the living clear proof came to them."
+  },
+  "98_02": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " namely a tremendous messenger from Allah, who recites pristine pages undefiled."
+  },
+  "98_03": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " that contain solid, upright scriptures providing for everything."
+  },
+  "98_07": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Verily those who believe and work righteous deeds, those are the best of beings."
+  },
+  "98_06": {
+    "wer": 0.0625,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Verily those who disbelieve of the people of the book and the idolaters are in the fire of the hell abyss. In it do ever remain. Those are the evilest of beings."
+  },
+  "98_08": {
+    "wer": 0.175,
+    "forced_approved": true,
+    "matches": false,
+    "english_transcription": " Therefore compense with their Lord his magnificent lush groves of Eden beneath which rivers flow, abiding their end without end. Allah is well pleased with them, and they with him. That is for whom is in dread awe of his Lord."
+  },
+  "98_05": {
+    "wer": 0.023255813953488372,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " nor have they been commanded aught else but to worship Allah alone, making their religion sincerely His, holding holy fast to pure monotheistic faith and to keep well the prayer and give the due alms, and that is the lasting upright, all-sufficing religion."
+  },
+  "98_04": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " nor did those given the book before disagree about the message, save just after the clear living proof had come to them."
+  },
+  "98": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " 98. The Living Clear Proof."
   }
 }

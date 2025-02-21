@@ -4,13 +4,17 @@ interface LoadingButtonProps {
   onClick: () => Promise<void>;
   children: React.ReactNode;
   className?: string;
+  isLoading?: boolean;
+  disabled?: boolean;
 }
 export function LoadingButton({
   onClick,
   children,
   className = "",
+  isLoading: isLoadingProp = false,
+  disabled = false,
 }: LoadingButtonProps) {
-  const [isLoading, setIsLoading] = React.useState(false);
+  const [isLoading, setIsLoading] = React.useState(isLoadingProp);
 
   const handleClick = async () => {
     setIsLoading(true);
@@ -27,7 +31,7 @@ export function LoadingButton({
     <button
       type="button"
       onClick={handleClick}
-      disabled={isLoading}
+      disabled={isLoading || disabled}
       className={`${className} ${
         isLoading ? "cursor-wait opacity-75" : ""
       }`.trim()}
