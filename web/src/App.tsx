@@ -340,6 +340,8 @@ export default function App() {
   const { ayahs, isLoading, error, refetch } = useAyahs();
   const [selectedSurah, setSelectedSurah] = React.useState<number | null>(null);
   const [isBulkProcessing, setIsBulkProcessing] = React.useState(false);
+  const [currentBatch, setCurrentBatch] = React.useState<number | null>(null);
+  const [totalBatches, setTotalBatches] = React.useState<number>(0);
 
   const surahNumbers = Array.from(
     new Set(ayahs.map((ayah) => getSurahNumber(ayah.id)))
@@ -374,6 +376,16 @@ export default function App() {
       es.close();
     };
   }, [refetch]);
+
+  useEffect(() => {
+    if (
+      typeof Notification !== "undefined" &&
+      Notification.permission !== "granted" &&
+      Notification.permission !== "denied"
+    ) {
+      Notification.requestPermission();
+    }
+  }, []);
 
   // Don't render until we have a selected surah
   if (selectedSurah === null) {
@@ -414,10 +426,26 @@ export default function App() {
       // Find all unmatched ayahs in the selected surah
       const unmatchedAyahs = ayahs
         .filter((a) => getSurahNumber(a.id) === selectedSurah)
-        .filter((a) => a.matches === null);
+        .filter((a) => a.matches === null)
+        .sort((a, b) => {
+          const idA = parseAyahId(a.id);
+          const idB = parseAyahId(b.id);
+
+          if (idA.surah !== idB.surah) {
+            return idA.surah - idB.surah;
+          }
+
+          return idA.ayah - idB.ayah;
+        });
+
+      // Calculate total batches based on chunk size of 10
+      const total = Math.ceil(unmatchedAyahs.length / 10);
+      setTotalBatches(total);
 
       // Process them in chunks of 10
       for (let i = 0; i < unmatchedAyahs.length; i += 10) {
+        const batchNumber = Math.floor(i / 10) + 1;
+        setCurrentBatch(batchNumber);
         const chunk = unmatchedAyahs.slice(i, i + 10);
         await Promise.all(
           chunk.map((ayah) =>
@@ -429,10 +457,27 @@ export default function App() {
         // After completing each chunk, refetch
         await refetch();
       }
+
+      // After processing all chunks, send a notification
+      if (Notification.permission === "granted") {
+        new Notification("Surah processed successfully!");
+      } else if (Notification.permission !== "denied") {
+        Notification.requestPermission().then((permission) => {
+          if (permission === "granted") {
+            new Notification("Surah processed successfully!");
+          } else {
+            alert("Surah processed successfully!");
+          }
+        });
+      } else {
+        alert("Surah processed successfully!");
+      }
     } catch (error) {
       console.error("Bulk processing error:", error);
     } finally {
       setIsBulkProcessing(false);
+      setCurrentBatch(null);
+      setTotalBatches(0);
     }
   }
 
@@ -463,6 +508,12 @@ export default function App() {
         onRefresh={refetch}
         isBulkProcessing={isBulkProcessing}
       />
+
+      {isBulkProcessing && currentBatch !== null && totalBatches > 0 && (
+        <div className="text-center mt-4">
+          Processing batch {currentBatch} of {totalBatches}
+        </div>
+      )}
     </div>
   );
 }

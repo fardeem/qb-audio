@@ -472,5 +472,1343 @@
     "forced_approved": true,
     "matches": false,
     "english_transcription": " He has truly succeeded forever, who strives to reach full purity and faith indeed."
+  },
+  "90_12": {
+    "wer": 0.18181818181818182,
+    "forced_approved": true,
+    "matches": false,
+    "english_transcription": " but may teach you what is the final sheer impasse."
+  },
+  "90_06": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " He proudly says, I have spent massed piles of wealth to stop the divine message."
+  },
+  "90_11": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and yet still he would not throw himself forward in the assault to surmount the final sheer impasse."
+  },
+  "90_07": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Does he deem that no one ever saw him?"
+  },
+  "90_10": {
+    "wer": 0.14285714285714285,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " and guide him to the two where they clear heights of good and of evil."
+  },
+  "90_13": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " to free a human neck from bondage."
+  },
+  "90_14": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " or to feed on a dire day of sweeping famine."
+  },
+  "90_05": {
+    "wer": 0.15384615384615385,
+    "forced_approved": true,
+    "matches": false,
+    "english_transcription": " as he deemed that no one shall ever have him in his power."
+  },
+  "90_04": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Verily have we created man in endless travail."
+  },
+  "90_15": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " an orphan who is kin."
+  },
+  "90_01": {
+    "wer": 0.10526315789473684,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " In the name of Allah, most merciful and compassionate, no, I need not even swear by this sacred enviroment city."
+  },
+  "90_17": {
+    "wer": 0.034482758620689655,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " and greater still to be of those who have truly believed, who bid one another to bear with every trial, and bid one another to show every mercy."
+  },
+  "90_16": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " or an unfortunate starved down to the very ground."
+  },
+  "90_18": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Those shall be of the fortunate on the right."
+  },
+  "90_03": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and by every parent and to what they gave birth."
+  },
+  "90_19": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and those who deny our very verses. They are those of the side of the lucklessly wretched left."
+  },
+  "90_02": {
+    "wer": 0.2727272727272727,
+    "forced_approved": true,
+    "matches": false,
+    "english_transcription": " will no less than you yourself abide in this sacred environ city."
+  },
+  "90_08": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Did we ourselves not make him two eyes?"
+  },
+  "90_09": {
+    "wer": 0.3333333333333333,
+    "forced_approved": true,
+    "matches": false,
+    "english_transcription": " and a tongue into lips."
+  },
+  "90": {
+    "wer": 0.3333333333333333,
+    "forced_approved": true,
+    "matches": false,
+    "english_transcription": " 90, the city."
+  },
+  "90_20": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Over them shall be an unspeakable fire, shutting them awfully in."
+  },
+  "80_03": {
+    "wer": 0.21428571428571427,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Well, how should you now? Happily he might grow pure in word and deed."
+  },
+  "80_17": {
+    "wer": 0.125,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " May man be slain, how utter and ingrate."
+  },
+  "80_14": {
+    "wer": 0.5,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " pristine and inviolate sacred purity."
+  },
+  "80_16": {
+    "wer": 0.25,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " devoted to Him with every good."
+  },
+  "80_01": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " In the name of Allah, most merciful and compassionate, he frowned and turned away to others."
+  },
+  "80_02": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " that the blind man came to talk with him as he spoke to them."
+  },
+  "80_29": {
+    "wer": 0.2,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " olives and date palms."
+  },
+  "80_28": {
+    "wer": 1.0,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "80_15": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " In the hands of Legion Angelic Bearers of Revelation."
+  },
+  "80_11": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " By no means. Verily, this is an incomparably powerful reminder."
+  },
+  "80_05": {
+    "wer": 0.14285714285714285,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " It's for him who feels no need."
+  },
+  "80_39": {
+    "wer": 0.14285714285714285,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " smiling with joyous laughter, refulgent with expectation."
+  },
+  "80_06": {
+    "wer": 0.8571428571428571,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "80_38": {
+    "wer": 1.0,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "80_12": {
+    "wer": 1.0,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "80_04": {
+    "wer": 0.08333333333333333,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " or at least remember and heed, and the remindants do him good."
+  },
+  "80_13": {
+    "wer": 0.5,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " and celestial inscribed pages high in honor."
+  },
+  "80_10": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " From him you are distracted."
+  },
+  "80_22": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " then finally and even greater, when he wills, raise him forth alive again."
+  },
+  "80_07": {
+    "wer": 0.9,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "80_36": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and his long-loved wife and very sons."
+  },
+  "80_37": {
+    "wer": 0.21428571428571427,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Every last man of them that day will have too great a care for anything else."
+  },
+  "80_23": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " By no means, he has not yet even done what he bade him."
+  },
+  "80_35": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and mother and father."
+  },
+  "80_09": {
+    "wer": 1.0,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "80_21": {
+    "wer": 0.15384615384615385,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " than in yet greater shall make him die, and a grave endow him."
+  },
+  "80_20": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " then and greater, the one smooth way made easy for him."
+  },
+  "80_34": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " A day when even a real man will flee from his own brother."
+  },
+  "80": {
+    "wer": 0.3333333333333333,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " He frowned."
+  },
+  "80_08": {
+    "wer": 0.9090909090909091,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "80_30": {
+    "wer": 0.6,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " their mighty trees entwined."
+  },
+  "80_24": {
+    "wer": 0.1111111111111111,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " so that man but look at his own food."
+  },
+  "80_18": {
+    "wer": 1.0,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "80_19": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " From a mere sperm drop he created him and perfected him to measure."
+  },
+  "80_25": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " that we have outpoured rainwater mightily down."
+  },
+  "80_31": {
+    "wer": 1.0,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "80_32": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " as a long but passing enjoyment for you and your livestock."
+  },
+  "80_27": {
+    "wer": 1.0,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "80_26": {
+    "wer": 1.0,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "80_33": {
+    "wer": 0.625,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Trumpet blast comes."
+  },
+  "80_41": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " overspread by black despair."
+  },
+  "80_40": {
+    "wer": 0.08333333333333333,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " and a great many faces on that day shall be grimed with dust."
+  },
+  "80_42": {
+    "wer": 0.16666666666666666,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Those should be the godless deniers."
+  },
+  "107": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " 107 Simplest Household Things"
+  },
+  "107_06": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " who make sure to be seen of men."
+  },
+  "107_01": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " In the name of Allah, most merciful and compassionate, can you have considered him who cries lies to the reckoning itself?"
+  },
+  "107_07": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and are too sordidly mean to lend others, even the simplest household things."
+  },
+  "107_03": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and urges not others to give the unfortunate his food."
+  },
+  "107_05": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " who negligently forget to keep their prayers."
+  },
+  "107_02": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " It is he who shoves the orphan harshly away."
+  },
+  "107_04": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " So woe to those praying."
+  },
+  "108_01": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " In the name of Allah, most merciful and compassionate, verily have we given you abundance beyond words or ken."
+  },
+  "108_02": {
+    "wer": 0.1875,
+    "forced_approved": true,
+    "matches": false,
+    "english_transcription": " So faithfully give the prayer to your Lord and slaughter sacrifice camels to feed others in charity."
+  },
+  "108_03": {
+    "wer": 0.05555555555555555,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Verily he who hates you shall be the one cut off from all good to the last posterity."
+  },
+  "108": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " 108. Abundance."
+  },
+  "106": {
+    "wer": 1.0,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "106_04": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " who has fed them from dire hunger and saved them from great fear."
+  },
+  "106_02": {
+    "wer": 0.08695652173913043,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " as they have all been made familiarly fond of going on their sacredly protected trade caravans, of the winter south and the summer north."
+  },
+  "106_03": {
+    "wer": 0.09090909090909091,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Let them humbly worship the Lord of this sacred house."
+  },
+  "106_01": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " in the name of Allah most merciful and compassionate, for making Quraysh familiarly fond together."
+  },
+  "81_20": {
+    "wer": 0.5,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " and out of might I placed with him of the throne an inabricable rank."
+  },
+  "81_08": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " And when the infant girl buried alive is asked,"
+  },
+  "81_22": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " nor is your companion any madman."
+  },
+  "81_09": {
+    "wer": 1.0,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "81_26": {
+    "wer": 0.1111111111111111,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " So where do you get by rejecting its truths?"
+  },
+  "81_21": {
+    "wer": 0.125,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Obeyed there, faithfully true and delivering his trust."
+  },
+  "81_19": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Verily it is the word of a truly noble angelic messenger."
+  },
+  "81_23": {
+    "wer": 1.0,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "81_25": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Nor is it the word of an execrable devil."
+  },
+  "81_27": {
+    "wer": 0.08333333333333333,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " It is not but a mighty reminder to all worlds of beings."
+  },
+  "81_24": {
+    "wer": 0.18181818181818182,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " nor ever would he stingy withhold out revealed of the unseen."
+  },
+  "81_18": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and by the morn when it breathes in whole relief."
+  },
+  "81_01": {
+    "wer": 0.5625,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " when the sun is wrapped finally up."
+  },
+  "81_29": {
+    "wer": 0.4,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " save if Allah wills, Lord of all worlds and beings."
+  },
+  "81": {
+    "wer": 0.25,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " 81, the final enwrapping."
+  },
+  "81_28": {
+    "wer": 0.875,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "81_15": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " then no, I need not even swear, by the stars that recede from daylight."
+  },
+  "81_02": {
+    "wer": 0.1,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " And when the ascended stars plunge down spent and dark."
+  },
+  "81_14": {
+    "wer": 0.4444444444444444,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Know what it has brought."
+  },
+  "81_16": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and by those that course across the sky sweeping space clean of debris before them."
+  },
+  "81_17": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and by the night when it steals furtively away."
+  },
+  "81_03": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and when the mountains are blown adrift."
+  },
+  "81_07": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and when souls alike are joined with like."
+  },
+  "81_13": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and when the lush grove of paradise is brought consummately nigh."
+  },
+  "81_12": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " And when raging hell is mounted high in flames."
+  },
+  "81_04": {
+    "wer": 0.2857142857142857,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " and when full pregnant camels are just left."
+  },
+  "81_05": {
+    "wer": 0.1111111111111111,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " And when wild beasts are masked for their retribution."
+  },
+  "81_06": {
+    "wer": 0.625,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " \u0648\u0625\u0630\u0627 \u0627\u0644\u0628\u062d\u0627\u0631 \u0633\u062c\u0631\u062a And when the seas are stoked roaring a fire."
+  },
+  "81_11": {
+    "wer": 0.7142857142857143,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " peeled back."
+  },
+  "81_10": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and when the pages of deeds are opened to see."
+  },
+  "82_06": {
+    "wer": 0.16666666666666666,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " O ever forgetful man, what has deluded you about your magnanimous noble Lord?"
+  },
+  "82_12": {
+    "wer": 0.8,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "82_05": {
+    "wer": 0.4166666666666667,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " What is sent ahead or left undone behind."
+  },
+  "82_13": {
+    "wer": 1.0,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "82_04": {
+    "wer": 0.42857142857142855,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " \u0648\u064e\u0625\u0650\u0630\u064e\u0627 \u0627\u0644\u0652\u0642\u064f\u0628\u064f\u0648\u0631\u064f \u0628\u064f\u0639\u0652\u062b\u0650\u0631\u064e\u062a\u0652 And deep graves are turned, flung out."
+  },
+  "82_07": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " who created you, then formed you perfect, then balanced you evenly out."
+  },
+  "82_10": {
+    "wer": 0.625,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Keeping close watch."
+  },
+  "82_11": {
+    "wer": 1.0,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "82_14": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and verily the prodigally wicked are in a raging fire."
+  },
+  "82_01": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " In the name of Allah, most merciful and compassionate, when the sky is shattered to pieces."
+  },
+  "82_15": {
+    "wer": 1.0,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "82_03": {
+    "wer": 1.0,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "82_02": {
+    "wer": 1.0,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " unfinished and"
+  },
+  "82_17": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and what may teach you what is the day of reckoning."
+  },
+  "82": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " 82 The Shattering"
+  },
+  "82_18": {
+    "wer": 0.9285714285714286,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "82_16": {
+    "wer": 1.0,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "82_19": {
+    "wer": 0.11764705882352941,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " A day no soul possesses a thing to avail another, and the command that day is a loss."
+  },
+  "82_08": {
+    "wer": 0.09090909090909091,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " In any splendid fair human form he will put you together."
+  },
+  "82_09": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " By no means, indeed you cry lies to the very reckoning."
+  },
+  "83_31": {
+    "wer": 0.09090909090909091,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " and when they returned, their families returned in high glee."
+  },
+  "83_25": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " served exquisitely pure delicious wine on which seal is set."
+  },
+  "83_30": {
+    "wer": 0.46153846153846156,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " mocked them with gesturing eyes and winks."
+  },
+  "83_19": {
+    "wer": 0.375,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " and what may teach you what is in the UN."
+  },
+  "83_26": {
+    "wer": 0.2857142857142857,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " yet seal the finest mask, and for that let all who advise compete."
+  },
+  "83_18": {
+    "wer": 0.05263157894736842,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " By no means verily the record of those devoted to Allah in every good shall be written in Iliyun."
+  },
+  "83_33": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " while they were not sent to stand watch over them."
+  },
+  "83_24": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " You know in their faces the radiant joy of bliss."
+  },
+  "83_32": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " And whenever they saw believers, they would say, these miserable souls are completely lost."
+  },
+  "85_18": {
+    "wer": 1.0,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "85_19": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Rather are those who disbelieve, immersed in crying lies."
+  },
+  "85_08": {
+    "wer": 0.1111111111111111,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " while they seethed so fiercely against them for nothing but their believing in a law, the invincible, the all-laudable."
+  },
+  "85_09": {
+    "wer": 0.1111111111111111,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " who possesses the sovereignty of the heavens and earth, and the law is all-present witness over every single thing."
+  },
+  "85_22": {
+    "wer": 0.6666666666666666,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Immaculately preserved."
+  },
+  "85_21": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Nay, but it is a mighty recital, resplendently noble."
+  },
+  "85_12": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Truly the fury of your Lord is unsparingly dire."
+  },
+  "85_20": {
+    "wer": 0.42857142857142855,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " while the law encompasses them round from behind."
+  },
+  "85_06": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " as they were seated long, presiding over it."
+  },
+  "85_07": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " seeing with their own eyes what they were doing to believers."
+  },
+  "85_13": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Verily he alone originates and brings back again."
+  },
+  "85_05": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " the fiery blaze kept mounted high with fuel."
+  },
+  "85_04": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Slain be those of the long-trenched pit."
+  },
+  "85_14": {
+    "wer": 0.3333333333333333,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " while he is the all-forgiving, the ever-tenderly loving kind."
+  },
+  "85_11": {
+    "wer": 0.041666666666666664,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Verily those who believe and work righteous deeds, theirs are less groves of paradise beneath which rivers flow. That is the mighty undying triumph."
+  },
+  "85": {
+    "wer": 1.0,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "85_10": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Verily those who persecute men and women who truly believe, then never repent no matter how long after. Theirs is the chastisement of the hell abyss, and theirs the chastisement of the raging fire."
+  },
+  "85_15": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " the incomparably noble possessor of the very throne."
+  },
+  "85_17": {
+    "wer": 0.9,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "85_01": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " In the name of Allah, most merciful and compassionate, by the sky with many tremendous constellations."
+  },
+  "85_03": {
+    "wer": 0.2,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " and by a shocked eyewitness in what shall be appallingly beheld."
+  },
+  "85_02": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and by the final promised day."
+  },
+  "85_16": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " forever the doer of all he wills."
+  },
+  "86": {
+    "wer": 0.3333333333333333,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " 86, The Nightcomer."
+  },
+  "86_01": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " In the name of Allah, most merciful and compassionate, by the sky and the nightcomer."
+  },
+  "86_02": {
+    "wer": 0.2222222222222222,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " and what may teach you what is the night coming."
+  },
+  "86_05": {
+    "wer": 0.16666666666666666,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " so that man will reflect of that which he has been created."
+  },
+  "86_03": {
+    "wer": 0.16666666666666666,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " the ascendant star of dark-piercing brightness."
+  },
+  "86_07": {
+    "wer": 0.2857142857142857,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " that issues from between back and breast bones."
+  },
+  "86_04": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " nor is there any soul but has a watcher over it who misses nothing."
+  },
+  "86_08": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Verily he is well able to bring him back again."
+  },
+  "86_09": {
+    "wer": 0.058823529411764705,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " On a day when the most sacred thoughts and deeds Shall be brought openly out and tried."
+  },
+  "86_06": {
+    "wer": 0.2857142857142857,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " It was created of an outpulsing worthless fluid."
+  },
+  "86_10": {
+    "wer": 0.25,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " so no strength really have nor ally."
+  },
+  "86_11": {
+    "wer": 0.1111111111111111,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " by the sky that returns myriad processes and cycles."
+  },
+  "86_14": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " naught is it of wavering jest."
+  },
+  "86_15": {
+    "wer": 1.0,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "86_12": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and by the earth that fissures endlessly apart."
+  },
+  "86_16": {
+    "wer": 0.8,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " \u0648\u064e\u0623\u064e\u0643\u0650\u064a\u062f\u064f \u0643\u064e\u064a\u0652\u062f\u064b\u0627 And the eye lay great guile."
+  },
+  "86_13": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Verily it is a word decisively final."
+  },
+  "86_17": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " So respite for a time those who believe not. Respite them yet for but a while."
+  },
+  "91": {
+    "wer": 0.3333333333333333,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " 91, the sun."
+  },
+  "91_01": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " In the name of Allah most merciful and compassionate, by the sun and its morning blaze of glory."
+  },
+  "91_05": {
+    "wer": 1.0,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "91_02": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and by the moon when it follows after it."
+  },
+  "91_06": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and by the earth and that which outflung it far and wide."
+  },
+  "91_03": {
+    "wer": 1.0,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "91_07": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and by lofty soul and that which perfected it in matchless nature."
+  },
+  "91_04": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and by the night when drawing by reaches over it."
+  },
+  "91_08": {
+    "wer": 0.1,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " and instilled in its sense of evil and of God-fearingness."
+  },
+  "91_09": {
+    "wer": 0.2,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " He has truly succeeded forever, who makes it reach full purity and faith indeed."
+  },
+  "91_10": {
+    "wer": 1.0,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "91_11": {
+    "wer": 0.2857142857142857,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " The mood cried lies in their rank transgression."
+  },
+  "91_14": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " but they cried him lies and hamstrung and slew it. So their lord plastered them fatally down with blow upon blow for their heinous crime and leveled them clean."
+  },
+  "91_15": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " nor fears he the slightest reprisal."
+  },
+  "91_12": {
+    "wer": 0.09090909090909091,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " when the most luckless of them all was sent heavenly forth."
+  },
+  "91_13": {
+    "wer": 0.1111111111111111,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " So the Messenger of Allah told them, Beware for the sheik animal of Allah and its drink of water."
+  },
+  "84": {
+    "wer": 0.25,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " 84, the splitting asunder."
+  },
+  "84_01": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " In the name of Allah, most merciful and compassionate, when the very sky splits asunder."
+  },
+  "84_02": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " while hearkening to its lord, and it must."
+  },
+  "84_03": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and the surface of the earth is drawn taut, stretched out."
+  },
+  "84_04": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and throws up what is in it, and voids itself convulsively empty."
+  },
+  "84_05": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " while hearkening to its lord, and it must."
+  },
+  "84_06": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " O man, verily you are toiling your troublescarred way to your lord, so inevitably shall meet him."
+  },
+  "84_08": {
+    "wer": 0.125,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " you shall certainly meet with an easy reckoning."
+  },
+  "84_07": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " So as for him who is given his book in his right hand,"
+  },
+  "84_09": {
+    "wer": 1.0,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Thank you."
+  },
+  "84_10": {
+    "wer": 0.07142857142857142,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " and as for him given his book from behind his back and his left."
+  },
+  "84_11": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " He shall plead without cease for destruction to end him."
+  },
+  "84_14": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Verily he was just sure he would never meet with anything else."
+  },
+  "84_15": {
+    "wer": 0.18181818181818182,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Indeed he would, truly was his lord, ever of him, all seeing."
+  },
+  "84_12": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and be roasted in a raging blaze."
+  },
+  "84_16": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " then no, I need not even swear, by the vanishing last light of sunset."
+  },
+  "84_13": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Truly he had always been with his family and kin in happiness."
+  },
+  "84_19": {
+    "wer": 0.06666666666666667,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " Verily all of you shall have to ride out, one even dire stage after another."
+  },
+  "84_17": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and by the night and all it draws together in its folds."
+  },
+  "84_18": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " and the moon when it waxes full brilliant."
+  },
+  "84_20": {
+    "wer": 0.2857142857142857,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " So how can they possibly not be leaves?"
+  },
+  "84_21": {
+    "wer": 0.07692307692307693,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " and when the Qur'an is recited unto them, not bow them worshiply down."
+  },
+  "84_24": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " So give them glad tidings of a painful chastisement."
+  },
+  "84_22": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " rather those who disbelieve cry lies."
+  },
+  "84_25": {
+    "wer": 0.0,
+    "forced_approved": false,
+    "matches": true,
+    "english_transcription": " Save those who believe and work righteous deeds. Theirs is a mighty wage never to wane."
+  },
+  "84_23": {
+    "wer": 0.375,
+    "forced_approved": false,
+    "matches": false,
+    "english_transcription": " while the lawn is better what they hold inside."
   }
 }
